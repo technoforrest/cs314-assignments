@@ -1,0 +1,57 @@
+header{
+    font-size: 60pt;
+    font-family: fantasy;
+    color: white;
+}
+
+body {
+    text-align: center;
+    background-image: url("milky-way-2695569_1920.jpg");
+    
+}
+#sect1{
+    background-color: lightgray;
+    
+}
+
+p1, p2{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+#kids{
+    width:350px; 
+    height:250px;
+    padding: 10%;
+    position: relative;
+    vertical-align: middle;
+}
+#kif{
+    width:350px; 
+    height:450px; 
+    padding: 10%;
+    position:relative;
+    vertical-align: middle;
+}
+
+
+
+#sect3{
+    background-color: darkblue;
+    width:auto ;
+    height: 500px;
+}
+#div1{
+    width: auto;
+    height: inherit;
+    background: darkorange;
+    
+}
+button{
+    text-align: center;
+    background: #73AD21;
+    font-size: 16px;
+    width: 25%;
+    border-style: ridge;
+    border-radius: 25px;
+    margin-top: 10%;
+}
