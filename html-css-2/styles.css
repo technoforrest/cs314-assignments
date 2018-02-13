@@ -1,0 +1,87 @@
+header{
+    font-size: 60pt;
+    font-family: 'Ubuntu', sans-serif;
+    background: -webkit-linear-gradient(red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body {
+    text-align: center;
+    background-image: url("milky-way-2695569_1920.jpg");
+    
+}
+#sect1{
+    background-color: rgb(26, 26, 110);
+    border-style: outset;
+    
+}
+h1{
+    text-align: center;
+    font-family: Ubuntu, sans-serif; 
+    background: -webkit-linear-gradient(red, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+p1, p2{
+    text-align: center;
+    font-family: Ubuntu, sans-serif; 
+    background: -webkit-linear-gradient(red, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ 
+    
+}
+#sect2{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    height: 600px;
+    position: relative;
+    justify-content: center;
+    
+}
+#arrakis{
+    margin-right: 5%;
+    border-style: outset;
+}
+#kif{
+    border-style: outset;
+}
+
+#sect3{
+    display: flex;
+    background: linear-gradient(red, yellow);    
+    width:auto ;
+    height: 200px;
+    justify-content: center;
+   align-items: center;
+   justify-content: center;
+   border-style: outset;
+
+}
+
+a:hover{
+    background: red;
+    transition: opacity 2s ease-in
+}
+a{
+    text-align: center;
+    background: #73AD21;
+    font-size: 16px;
+    width: 25%;
+    border-style: ridge;
+    border-radius: 25px;
+    font-family: Ubuntu, sans-serif; 
+    text-decoration-line: none;
+}
+.flex-container {
+    margin-top: 5%;
+    display: flex;
+    height: 300px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+   
+  }
