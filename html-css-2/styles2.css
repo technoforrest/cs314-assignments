@@ -10,21 +10,39 @@ header{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-p1{
-    color: aliceblue;
-}
-@keyframes play {
-    0%   {background-position: 0px;}
-    100% {background-position: -1800px;}
+#sect1{
+    width: auto;
+    height: 275px;
     
-   
+}
+
+
+@keyframes play {
+    100% {background-position: -1800px;}
 }
 #div1{
+    margin-left: calc(50% - 100px);
     width: 200px;
     height: 200px;
     border-radius: 100px;
     background: url('venus.jpg') left, center;
-    animation: play 15s infinite;
+    animation-name: play; 
+    animation-duration: 20s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#div1:hover{
+    margin-left: calc(50% - 150px);
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+    -webkit-transition: margin-left width height border-radius 5s ease;
+}
+#div2{
+    background-color: rgba(26, 26, 110, 0.6);
+    border-style: outset;
     
-    
+}
+p1{
+    color: white;
 }

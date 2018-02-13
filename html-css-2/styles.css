@@ -11,7 +11,7 @@ body {
     
 }
 #sect1{
-    background-color: rgb(26, 26, 110);
+    background-color: rgba(0, 0, 0, 0.4);
     border-style: outset;
     
 }
@@ -36,7 +36,7 @@ p1, p2{
     width: auto;
     flex-direction: row;
     align-items: center;
-    height: 600px;
+    height: 400px;
     position: relative;
     justify-content: center;
     
@@ -45,7 +45,7 @@ p1, p2{
     margin-right: 5%;
     border-style: outset;
 }
-#kif{
+#duneMantra{
     border-style: outset;
 }
 
@@ -55,9 +55,8 @@ p1, p2{
     width:auto ;
     height: 200px;
     justify-content: center;
-   align-items: center;
-   justify-content: center;
-   border-style: outset;
+    align-items: center;
+    border-style: outset;
 
 }
 
