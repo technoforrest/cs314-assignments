@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+    </style>
+</head>
+
+<body>
+    <section id="sect1">
+        <div id="textDiv">
+            <h1 style="color:black; font-size:36px;">Hi There!</h2>
+                <h3>Tell me a little bit about yourself.</h3>
+        </div>
+    </section>
+    <section id="sect2">
+        <div>
+            <form>
+                <div id="nameDiv">
+                    <label for="fname">First Name</label>
+                    <br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name">
+                    <br>
+                    <label for="lname">Last Name</label>
+                    <br>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+                    <br>
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="text" id="email" name="email" placeholder="Enter your email">
+                    <br>
+                    <label for="phone">Number</label>
+                    <br>
+                    <input type="number" id="phone" name="phone" placeholder="Enter your number">
+                </div>
+
+                <div class="radio-container" id="radioDiv">
+                    <label class="font" for="dog">Dog Person</label>
+                    <input type="radio" name="dog" value="dog">
+                    <br>
+                    <label class="font" for="cat">Cat Person</label>
+                    <input type="radio" name="cat" value="cat">
+                    <br>
+                    <label class="font" for="horse">Horse Person</label>
+                    <input type="radio" name="horse" value="horse">
+                </div>
+                <div id="aboutDiv">
+                    <label class="font" for="description">About You</label>
+                    <br>
+                    <textarea name="description" id="description" maxlength="200" placeholder="Tell me something unique about yourself"></textarea>
+                </div>
+                <div id="seasonDiv">
+                    <label class="" for="seasons">Favorite Season</label>
+                    <br>
+                    <select id="season" name="season">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                </div>
+                <br>
+                <div> id="buttonDiv"
+                    <input type="submit" value="Click Me">
+                </div>
+
+            </form>
+    </section>
+</body>
+
+</html>
