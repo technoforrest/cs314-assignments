@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    display: block;
+    background-image: url("snowytrees.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+ul.topnav, ul.botnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul.topnav li, ul.botnav li {float: left;}
+ul.topnav li a, ul.botnav li a {
+    display: block;
+    
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+.sections{
+    width: 100%;
+    height: 75px;
+    background-color: white;
+}
+#bodDiv{
+    
+    margin-left: 3%;
+    margin-right: 3%;
+}
+h1{
+    font-size: 5em;
+}
+
+
+#sect1Div{
+    padding-top: 2%;
+    height: 20%;
+    width: 100%;
+    background-color:rgba(black, black, black, 0.1);
+    color: white;
+    text-align: center;
+}
+#sect2Div{
+     padding-top: 3%;
+}
+
+#sect2Div, #sect3Div{
+    
+    background-color: white;
+    color: #000;
+    height: 30%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    padding-top: 3%;
+   
+}
+.flex-container {
+    
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+   
+  }
+  footer{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+  }
