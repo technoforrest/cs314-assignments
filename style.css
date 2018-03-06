@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
 }
 header{
     position: fixed;
@@ -21,7 +22,6 @@ ul.topnav, ul.botnav {
 ul.topnav li, ul.botnav li {float: left;}
 ul.topnav li a, ul.botnav li a {
     display: block;
-    
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -34,7 +34,6 @@ ul.topnav li a:hover:not(.active) {background-color: #111;}
     background-color: white;
 }
 #bodDiv{
-    
     margin-left: 3%;
     margin-right: 3%;
 }
@@ -63,39 +62,20 @@ h1{
     padding-top: 3%;
    
 }
-div.gallery {
-    border: 1px solid #ccc;
-    background-color: white;
+#gallerySect {
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
-div.gallery:hover {
-    border: 1px solid #777;
-}
-div.gallery img {
-    width: 100%;
-    height: auto;
-}
-div.desc {
-    padding: 15px;
+.gallDiv{
+    background-color:white;
+    align-items: center;
     text-align: center;
-}
-* {
-    box-sizing: border-box;
-}
-.responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-}
-@media only screen and (max-width: 700px){
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-@media only screen and (max-width: 500px){
-    .responsive {
-        width: 100%;
-    }
 }
 .clearfix:after {
     content: "";
@@ -112,7 +92,31 @@ input:focus, select:focus, textarea:focus  {
     outline: none;
 }
 input, textarea{
-    width:25%;
+    width:80%;
+}
+#contactSect {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    font-family: ralewayregular, Geneva, sans-serif;
+}
+input, select, textarea {
+    width: 85%;
+    box-sizing: border-box;
+    font-family: ralewayregular, Geneva, sans-serif;
+    border: 2px #7c93b7 solid;
+    border-radius: 5px;
+    padding: 0.5em;
+    color: #7c93b7;
+    margin: 2px 0px 10px 0px;
+}
+textarea {
+    height: 150px;
+    resize: none;  
+}
+input[type="submit"]:hover {
+    color: white;
+    background: lightblue;
 }
 footer{
       position: fixed;
