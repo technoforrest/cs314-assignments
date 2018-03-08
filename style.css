@@ -5,7 +5,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'robotobold', sans-serif;
 }
 header{
     position: fixed;
@@ -28,6 +28,7 @@ ul.topnav li a, ul.botnav li a {
     text-decoration: none;
 }
 ul.topnav li a:hover:not(.active) {background-color: #111;}
+ul.botnav li a:hover:not(.active) {background-color: #111;}
 .sections{
     width: 100%;
     height: 75px;
@@ -36,6 +37,7 @@ ul.topnav li a:hover:not(.active) {background-color: #111;}
 #bodDiv{
     margin-left: 3%;
     margin-right: 3%;
+    background-color:rgba(black, black, black, 0.9);
 }
 h1{
     font-size: 5em;
@@ -44,7 +46,6 @@ h1{
     padding-top: 2%;
     height: 20%;
     width: 100%;
-    background-color:rgba(black, black, black, 0.9);
     color: white;
     text-align: center;
 }
@@ -62,26 +63,46 @@ h1{
     padding-top: 3%;
    
 }
+.portBod{
+    margin:5%;
+}
 #gallerySect {
     margin-top: 5%;
     margin-left: 3%;
     margin-right: 3%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 10px;
     flex-wrap: wrap;
     align-items: center;
 }
+
 .gallDiv{
     background-color:white;
     align-items: center;
     text-align: center;
+    
+    
+}
+img{
+    max-width:100%;
+    max-height:100%;
+}
+.portrait{
+    width:350px;
+    height: 400px;
+}
+.landscape{
+    width: 400px;
+    height: 350px;
 }
 .clearfix:after {
     content: "";
     display: table;
     clear: both;
 }
+
 textarea{
     resize: none; 
 }
@@ -98,12 +119,12 @@ input, textarea{
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
-    font-family: ralewayregular, Geneva, sans-serif;
+    font-family:  'robotobold', sans-serif;
 }
 input, select, textarea {
     width: 85%;
     box-sizing: border-box;
-    font-family: ralewayregular, Geneva, sans-serif;
+    font-family:  'robotobold', sans-serif;
     border: 2px #7c93b7 solid;
     border-radius: 5px;
     padding: 0.5em;
@@ -122,4 +143,37 @@ footer{
       position: fixed;
       bottom: 0;
       width: 100%;
+}
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 3em;
+    }
+    #sect2Div, #sect3Div{
+        font-size: 12px;
+
+    }
+    body{
+        margin-top: 5%;
+        margin-bottom: 25%;
+    }
+   .landscape{
+       width: 330;
+       height: 290;
+   }
+    .portBod{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 15%;
+        margin-bottom: 15%;
+    }
+    #gallerySect{
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+    .contactBod{
+        margin-top: 15%;
+        margin-bottom: 25%;
+    }
+
 }
