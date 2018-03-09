@@ -63,40 +63,34 @@ h1{
     padding-top: 3%;
    
 }
-.portBod{
-    margin:5%;
-}
+
 #gallerySect {
-    margin-top: 5%;
-    margin-left: 3%;
-    margin-right: 3%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px;
     flex-wrap: wrap;
-    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .gallDiv{
     background-color:white;
-    align-items: center;
     text-align: center;
-    
-    
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+#portAlign{
+    width: 25%;
+}
+#landAlign{
+    width: 40%;
 }
 img{
     max-width:100%;
     max-height:100%;
 }
-.portrait{
-    width:350px;
-    height: 400px;
-}
-.landscape{
-    width: 400px;
-    height: 350px;
-}
+
 .clearfix:after {
     content: "";
     display: table;
@@ -156,24 +150,17 @@ footer{
         margin-top: 5%;
         margin-bottom: 25%;
     }
-   .landscape{
-       width: 330;
-       height: 290;
+   #gallerySect{
+       flex-direction: column;
    }
-    .portBod{
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 15%;
-        margin-bottom: 15%;
-    }
-    #gallerySect{
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0;
-    }
-    .contactBod{
-        margin-top: 15%;
-        margin-bottom: 25%;
-    }
+   .gallDiv{
+    margin-top: 10%;
+   }
+   #portAlign{
+    width: 90%;
+   }
+   #landAlign{
+    width: 90%;
+   }
 
 }
