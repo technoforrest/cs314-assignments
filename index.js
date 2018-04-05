@@ -13,6 +13,9 @@ the user must be greater than or equal to 1.*/
 function charSwap(){
     let first, last, newWord;
     let word = oneWord();
+    if(word.length < 1){
+        word = prompt("Please enter a longer word.")
+    }
     first = word.charAt(0);
     last = word.charAt(word.length - 1);
     newWord = last + word.substring(1, word.length-1) + first;
@@ -24,8 +27,12 @@ new string adding "Hi" in front of the input string*/
 function hiStr(){
     let hi = "Hi "; 
     let name = oneWord();
-   let hiString = hi.concat(" ", name);
-    document.getElementById("demo2").innerHTML = hiString;
+    if(name == "Hi"){
+        document.getElementById("demo2").innerHTML = name;
+    }else{
+        let hiString = hi.concat(" ", name);
+        document.getElementById("demo2").innerHTML = hiString;
+    }
     
 }
 /*o create a new string from an input
@@ -33,6 +40,9 @@ string taking the last 3 characters and adding them to the front of the string.*
 function threeCharsToFront(){
     let newWord, newStr;
     let word = oneWord();
+    if(word.length < 3){
+        word = prompt("Please enter a longer word, 3 characters or longer.");
+    }
     newWord = word.slice(-3);
     newStr =  newWord + word;
     document.getElementById("demo3").innerHTML = newStr;
@@ -43,8 +53,14 @@ spaces. */
 function stringsToSentence(){
     let str;
     let list = wordList();
+    
     str = list.split(',');
-    alert(`My Bonnie lies over the ${str[0]}, my Bonnie lies over the ${str[1]}, so bring back my Bonnie to ${str[2]}.`)
+    if(str.length < 3){
+        list = prompt("This list needs three words. Please enter three words.");
+        str = list.split(',');
+    }
+  
+    alert(`My Bonnie lies over the ${str[0]}, my Bonnie lies over the ${str[1]}, so bring back my Bonnie to ${str[2]}.`);
    
 }
 /*asks for a string from the user and
@@ -52,28 +68,31 @@ creates a new string from that string where the first 3 characters are lowercase
 string length entered by the user is less than 3 convert all the characters in upper case.*/
 function upperOrLower(){
     let newStr;
-    let string = prompt("Please enter a word.");
-    if(string.length < 3){
-        newStr = string.toUpperCase();
-    }else {
-        let newStr1, newStr2, newStr;
-        let sub = string.substring(0, 2);
-        let str = string.substring(3, string.length -1);
-        newStr1 = sub.toLowerCase();
-        newStr2 = str.toLowerCase();
-        newStr = newStr1.concat("", newStr2);
+    let word = prompt("Please enter a word.");
+    newStr = word.toUpperCase();
+    if(word.length >= 3) {
+        let sub = newStr.substring(0, 3);
+        let str = newStr.substring(3, word.length);
+        let newStr1 = sub.toLowerCase();
+        newStr = newStr1.concat("", str);   
     }
-    document.getElementById("demo5").innerHTML = newStr;
+    document.getElementById("demo4").innerHTML = newStr;
+    
 }
 /*asks for a comma separated list of
 numbers from the user and swap the first and last elements of a given array of integers.*/
 function integerSwap(){
-    let first, last, newArr;
+    let first;
+    let last;
+    let middle;
+    let newArr;
     let num = numList();
-    first = num[0];
-    last =num[num.length - 1];
-    newArr = last + num.splice(1, word.length-1) + first;
-    document.getElementById("demo6").innerHTML = newArr;
+    newArr = num.split(',');
+    first = newArr[0];
+    last =newArr[newArr.length - 1];
+    middle = newArr.slice(1, newArr.length -1);
+    alert(last + middle + first);
+    
    
 }
 /*asks for a comma separated list of
@@ -92,7 +111,7 @@ function longestString(){
         }
         
     }
-   document.getElementById("demo7").innerHTML = longest;
+   document.getElementById("demo5").innerHTML = longest;
 }
 /*asks for a comma separated list
 of numbers from the user. Convert this list to an array of numbers and alert the largest
@@ -101,14 +120,16 @@ even number from the array of integers.
 function largestEvenNum(){
     let list = numList();
     let newList = list.split(',');
-    let numArr;
-    for(let i = 0; i < newList.length; i++) {
+    let bigEven  = [];
+    for(let i = newList.length; i > 0; i --){
         if(newList[i] % 2 == 0){
-            numArr.push(newList[i]);
+            bigEven.push(newList[i]);
         }
+
     }
-    numArr.sort(function(a, b){return b - a});
-    alert(numArr[0]);
+    bigEven.sort(function(a, b){return b - a});
+   
+    alert(bigEven[0]);
 }
 /*alerts the current day and time in the
 following format:
@@ -126,13 +147,14 @@ if( hr > 12 ) {
     ampm = "pm";
 }
     let dateStr = "Today is " + days[now.getDay()] + ". It is " + hr + ":" + now.getMinutes() + ampm + ".";
-    document.getElementById("demo9").innerHTML = dateStr;
+    document.getElementById("demo6").innerHTML = dateStr;
 }
-//let list = wordList();
-//unlimited(list);
+
+
 /*Accepts an unlimited number of
 arguments and prints them out in a single string in a single alert.*/
 function unlimited(...args){
-    alert(args);
+    alert(args.join('*'));
     
 }
+unlimited(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
