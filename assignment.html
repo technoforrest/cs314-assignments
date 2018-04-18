@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS in the Browser</title> 
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="assignment-styles.css">
+  </head> 
+  <body>
+    <section id="selection">
+      <div class="inner-content">
+        <p>Select the number that you want to scroll to:</p>
+        <button onclick="pageScroll('one')">1</button>
+        <button onclick="pageScroll('two')">2</button>
+        <button onclick="pageScroll('three')">3</button>
+        <button onclick="pageScroll('four')">4</button>
+        <button onclick="pageScroll('five')">5</button>
+      </div>
+    </section>
+    <section class="dark-bg" id="one">
+      <div  class="inner-content">
+        <p>1. Pick a background color:</p>
+        <button onclick="blueButt()">Blue</button>
+        <button  onclick="greenButt()">Green</button>
+      </div>
+    </section>
+    <section id="two">
+      <div class="inner-content">
+        <p>2. Click the button to change between a pink and orange background:</p>
+        <p>The text on the button will represent the color the user will get.</p>
+        <button id="colorButt"onClick="colorChange()">Click for pink!</button>
+      </div>
+    </section>
+    <section class="dark-bg" id="three">
+      <div class="inner-content">
+        <p>3. Input text to add to the list below</p>
+        <input id="textIn" type="text">
+        <button onclick="addToList()">Submit</button>
+        <ul id="uList">
+          <li>One</li>
+          <li>Green</li>
+        </ul>
+      </div>
+    </section>
+    <section id="four">
+      <div class="inner-content">
+        <p>4. If an item is clicked, remove it from the list.</p>
+        <ul>
+          <li id="bob" onclick="removeFromList('bob')">Bob</li>
+          <li id="tim" onclick="removeFromList('tim')">Tim</li>
+          <li id="jack" onclick="removeFromList('jack')">Jack</li>
+          <li id="sam" onclick="removeFromList('sam')">Sam</li>          
+        </ul>
+      </div>
+    </section>
+    <section class="dark-bg" id="five">
+      <div class="inner-content">
+        <p>5. If an item is clicked, select it (highlight it) and de-select everything else.</p>
+        <p>This doesn't have to be pretty.</p>
+        <p>Just change the background color of the selected item with a class.</p>
+        <ul id="uList2">
+          <li class="colorClass" onclick="highlightItem(0)">Bob</li>
+          <li class="colorClass" onclick="highlightItem(1)">Tim</li>
+          <li class="colorClass" onclick="highlightItem(2)">Jack</li>
+          <li class="colorClass" onclick="highlightItem(3)">Sam</li>          
+        </ul>
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
