@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Maps</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="icon" type="image/png" href="favicon-tree.ico ">
+    <style>
+        #map,
+        #map2 {
+            height: 100%;
+            width: 50%;
+            top: 50px;
+            right: 0;
+            left: 0;
+            bottom: 50px;
+
+            box-sizing: border-box;
+        }
+
+        #map {
+            position: absolute;
+            float: left;
+        }
+
+        #map2 {
+            float: right;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="topnav">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="form.html">Form</a>
+            </li>
+            <li>
+                <a href="maps.html">Map</a>
+            </li>
+            <li>
+                <a href="api.html">API</a>
+            </li>
+        </ul>
+    </header>
+    <section>
+        <div id="map" style=" height: 500px;"></div>
+        <script>
+            function initMap() {
+                var paccar = { lat: 47.666399, lng: -117.402059 };
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: paccar
+                });
+
+                var contentString1 = '<div id="content" >' +
+                    '<h4 id="firstHeading" class="firstHeading" >Worst Place on Campus</h4>' +
+                    '<div id="bodyContent">' +
+                    '<p>This place is where all the homework comes from. ' +
+                    'Avoid if you can! ' +
+                    '</div>';
+
+                var infowindow1 = new google.maps.InfoWindow({
+                    content: contentString1,
+                    maxWidth: 150
+
+                });
+                var marker1 = new google.maps.Marker({
+                    position: paccar,
+                    map: map,
+                    title: 'Avoid this place!'
+                });
+                marker1.addListener('click', function () {
+                    infowindow1.open(map, marker1);
+                });
+
+                    var contentString2 = '<div id="content" >' +
+                        '<h4 id="firstHeading" class="firstHeading" >Best Place on Campus</h4>' +
+                        '<div id="bodyContent">' +
+                        '<p>Hidden on the second floor of Jundt is a quiet lounge with ' +
+                        'an amazing view of campus. ' +
+                        '</div>';
+
+                    var infowindow2 = new google.maps.InfoWindow({
+                        content: contentString2,
+                        maxWidth: 150
+
+                    });
+                    var marker2 = new google.maps.Marker({
+                        position: { lat: 47.666321, lng: -117.406500 },
+                        map: map,
+                        title: 'Hidden Gem'
+                    });
+                    marker2.addListener('click', function () {
+                        infowindow2.open(map, marker2);
+                    });
+                    var contentString3 = '<div id="content" >' +
+                        '<h4 id="firstHeading" class="firstHeading" >COFFEE!!!</h4>' +
+                        '<div id="bodyContent">' +
+                        '<p>Come here for coffee. It isn\'t the best coffee, ' +
+                        'but it will keep you caffeinated! ' +
+                        '</div>';
+
+                    var infowindow3 = new google.maps.InfoWindow({
+                        content: contentString3,
+                        maxWidth: 150
+
+                    });
+                    var marker3 = new google.maps.Marker({
+                        position: { lat: 47.6672899, lng: -117.3981234 },
+                        map: map
+                    });
+                    marker3.addListener('click', function () {
+                        infowindow3.open(map, marker3);
+                    });
+                }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5_HBpvFsCW-2LYt2ri9R1wA4wIrpyhwo&callback=initMap">
+        </script>
+        </div>
+        <div id='map2' style=" height: 500px;"></div>
+        <script>
+           
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGVjaG5vZm9ycmVzdCIsImEiOiJjamdpbHBxMmowbzQ2MzNtZWNvZXp1b3VnIn0.qwaN_LUOKVuDV2GpcWTn-w';
+                var map2 = new mapboxgl.Map({
+                    container: 'map2',
+                    style: 'mapbox://styles/mapbox/light-v9',
+                    center: [-117.402059, 47.666399], // starting position
+                    zoom: 15.5,
+                    pitch: 45,
+                    bearing: -17.6,
+                    hash: true,
+                    container: 'map2'
+                });
+                // The 'building' layer in the mapbox-streets vector source contains building-height
+                // data from OpenStreetMap.
+                map2.on('load', function () {
+                    // Insert the layer beneath any symbol layer.
+                    var layers = map2.getStyle().layers;
+
+                    var labelLayerId;
+                    for (var i = 0; i < layers.length; i++) {
+                        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+                            labelLayerId = layers[i].id;
+                            break;
+                        }
+                    }
+
+                    map2.addLayer({
+                        'id': '3d-buildings',
+                        'source': 'composite',
+                        'source-layer': 'building',
+                        'filter': ['==', 'extrude', 'true'],
+                        'type': 'fill-extrusion',
+                        'minzoom': 15,
+                        'paint': {
+                            'fill-extrusion-color': '#aaa',
+
+                            // use an 'interpolate' expression to add a smooth transition effect to the
+                            // buildings as the user zooms in
+                            'fill-extrusion-height': [
+                                "interpolate", ["linear"], ["zoom"],
+                                15, 0,
+                                15.05, ["get", "height"]
+                            ],
+                            'fill-extrusion-base': [
+                                "interpolate", ["linear"], ["zoom"],
+                                15, 0,
+                                15.05, ["get", "min_height"]
+                            ],
+                            'fill-extrusion-opacity': .6
+                        }
+                    }, labelLayerId);
+                });
+                
+                map2.addControl(new mapboxgl.NavigationControl());
+
+
+        </script>
+        </div>
+    </section>
+    <footer>
+        <ul class="botnav">
+            <li>
+                <a href="https://github.com/technoforrest">
+                    <i class="fab fa-github"></i> Danielle's GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/danielle-forrest-gonzaga/">
+                    <i class="fab fa-linkedin"></i> Danielle's LinkedIn
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="index.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
