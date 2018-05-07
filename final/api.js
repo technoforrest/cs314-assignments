@@ -95,10 +95,10 @@ function displayDescription(data){
 
    
     for(let descriptionText of data)
-    {
+    {   // be sure you append your outer container to the id, so you will need to add a # in your jQuery selector
         let outerContainer = document.createElement('div');
-        outerContainer.id = 'outer-description-container-' + data[0].beerId;
-        $(`${data[0].beerId}`).append(outerContainer);
+        outerContainer.id = 'outer-description-container-' + descriptionText.id;
+        $(`#${descriptionText.beerId}`).append(outerContainer);
 
         let descriptionContainer = document.createElement('div');
         descriptionContainer.id = 'description-container-' + descriptionText.id;

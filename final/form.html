@@ -32,20 +32,23 @@
                 </header>
     <h1 style="color:white;text-align:center; ">Contact Danielle</h1>
     <section id="contactSect" style="background-color: rgba(black, black, black, .5); color: white;">
+        <form>
         <div id="nameDiv" style="margin-left: 15%; ">
             <div style="height:50px;">
-                <input type="text" id="fname" name="fname" placeholder="Enter your first name">
+                <input required type="text" id="fname"  name="fname" placeholder="Please enter your first name." >
+               
             </div>
             <div style="height:50px;">
-                <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+                <input required type="text" id="lname"   name="lname" placeholder="Please enter your last name."  >
+                
             </div>
         </div>
-            <div id="messDiv" style="margin-left: 15%; background-color:rgba(black, black, black, .5);">
-                <textarea name="description" id="description" maxlength="500" placeholder="Send me a message."></textarea>
+            <div id="messDiv"  style="margin-left: 15%; background-color:rgba(black, black, black, .5);">
+                <textarea required  name="description" id="description" maxlength="500" placeholder="Send me a message." ></textarea>
                 <input type="submit" value="Click Me" >
                 
             </div>
-            
+        </form>   
     </section>
     <footer>
         <ul class="botnav">
