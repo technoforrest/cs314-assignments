@@ -79,3 +79,64 @@ p{
     50%{width: 0;}
     100%{ width: 100; } 
   }
+
+
+
+
+h1{
+    font-size: 5em;
+}
+
+
+
+
+textarea{
+    resize: none; 
+}
+textarea::placeholder, input::placeholder{
+    color: gray;
+}
+input:focus, select:focus, textarea:focus  {
+    outline: none;
+}
+input, textarea{
+    width:80%;
+}
+#contactSect {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    font-family:  'robotobold', sans-serif;
+}
+input, select, textarea {
+    width: 85%;
+    box-sizing: border-box;
+    font-family:  'robotobold', sans-serif;
+    border: 2px #7c93b7 solid;
+    border-radius: 5px;
+    padding: 0.5em;
+    color: #7c93b7;
+    margin: 2px 0px 10px 0px;
+}
+textarea {
+    height: 150px;
+    resize: none;  
+}
+input[type="submit"]:hover {
+    color: white;
+    background: lightblue;
+}
+footer{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+}
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 3em;
+    }
+    #sect2Div, #sect3Div{
+        font-size: 12px;
+
+    }
+  }

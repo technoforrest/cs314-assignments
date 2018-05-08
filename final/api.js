@@ -58,8 +58,9 @@ function displayBeers(data) {
       
 
         $(`#beer-description-${beer.id}`).click((event) => {
-
+           
             descriptionClick(event, beer.id);
+            
 
         })
 
