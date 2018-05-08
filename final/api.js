@@ -92,25 +92,24 @@ function descriptionClick( event, beerId){
     }
 }
 function displayDescription(data){
-
-   
     for(let descriptionText of data)
     {   // be sure you append your outer container to the id, so you will need to add a # in your jQuery selector
         let outerContainer = document.createElement('div');
-        outerContainer.id = 'outer-description-container-' + descriptionText.id;
-        $(`#${descriptionText.beerId}`).append(outerContainer);
+        outerContainer.id = descriptionText.id;
+        outerContainer.className= 'outer-container'
 
         let descriptionContainer = document.createElement('div');
         descriptionContainer.id = 'description-container-' + descriptionText.id;
         descriptionContainer.className = 'description-container';
 
-        let descriptionBlock = document.createElement('p');
+        let descriptionBlock = document.createElement('h5');
         descriptionBlock.className = 'description';
         descriptionBlock.innerHTML = descriptionText.description;
        
 
-        $(`#${descriptionText.beerId}`).append(descriptionContainer);
-        $(`#description-container-${descriptionText.id}`).append(descriptionBlock);
+        $(`#${descriptionText.id}`).append(descriptionContainer);
+ 
+        $(`#${descriptionText.id}`).append(descriptionBlock);
     }
 }
 });
